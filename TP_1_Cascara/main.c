@@ -81,6 +81,7 @@ int main()
                 resta(num1, num2);
                 division(num1, num2);
                 multplicacion(num1, num2);
+                factorial(num1);
                 break;
             case 9:
                 seguir = 'n';

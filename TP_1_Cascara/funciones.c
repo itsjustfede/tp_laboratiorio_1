@@ -28,7 +28,7 @@ void suma(float num1, float num2)
 
     resultado = num1 + num2;
 
-    printf("La suma es: %.2f\n\n", resultado);
+    printf("\nLa suma es: %.2f\n\n", resultado);
 
 }
 
@@ -44,7 +44,7 @@ void resta(float num1, float num2)
 
     resultado = num1 - num2;
 
-    printf("La resta es: %.2f\n\n", resultado);
+    printf("\nLa resta es: %.2f\n\n", resultado);
 
 }
 
@@ -92,36 +92,59 @@ void multplicacion(float multiplicando, float multiplicador)
  * \param num El numero a ser factoriado
  *
  */
-void factorial(int num)
+void factorial(float num)
 {
     int i, resp = 1;
 
-    num = abs(num);
+    float valor;
 
-    num = validarNegativos(num);
+    valor = num;
 
-    if (num != -1)
+    valor = validarNegativos(valor);
+
+
+    if (valor != -1)
     {
-       for(i = num; i > 1; i--)
-        {
-            resp = resp * i;
-        }
+        valor = validarEntero(valor);
 
-        printf("\nEl factorial es: %d\n\n", resp);
+        if (valor == 1)
+        {
+            printf("\nEl numero ingresado no debe ser con decimal\n\n");
+        }
+        else
+        {
+            for(i = num; i > 1; i--)
+            {
+                resp = resp * i;
+
+
+            }
+            printf("\nEl factorial es: %d\n\n", resp);
+        }
 
     }
 
 }
 
 
-int validarNegativos(int num)
+float validarNegativos(float num)
 {
-    int respuesta = num;
+    float respuesta = num;
 
     if (num < 0)
     {
-    printf("\nError!!! El numero no puede ser negativo\n\n");
-    respuesta = -1;
+        printf("\nError!!! El numero no puede ser negativo\n\n");
+        respuesta = -1;
     }
     return respuesta;
+}
+
+float validarEntero(float num)
+{
+    int resp = 0;
+    if (num - (int) num > 0)
+    {
+        resp = 1;
+    }
+    return resp;
 }

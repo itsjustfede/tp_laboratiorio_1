@@ -5,6 +5,7 @@ void suma(float num1, float num2);
 void resta(float num1, float num2);
 void division(float dividendo, float divisor);
 void multplicacion(float multiplicando, float multiplicador);
-void factorial(int num);
-int validarNegativos(int num);
+void factorial(float num);
+float validarNegativos(float num);
+float validarEntero(float num);
 #endif // FUNCIONES_H_INCLUDED
